@@ -1,4 +1,4 @@
-# Python TTD starter template
+# Python TDD starter template
 Includes:
 * basic folder structure with working test
 * starter requirements and gitignore
@@ -13,4 +13,4 @@ python -m pytest tests
 
 # Reference
 * [pytest docs](https://docs.pytest.org/en/6.2.x/example/index.html)
-* [TTD with Python, 2E](https://learning.oreilly.com/library/view/test-driven-development-with/9781491958698/part01.html#part1)
+* [TDD with Python, 2E](https://learning.oreilly.com/library/view/test-driven-development-with/9781491958698/part01.html#part1)
