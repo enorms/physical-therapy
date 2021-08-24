@@ -1,0 +1,14 @@
+{
+  "git.ignoreLimitWarning": true,
+  "python.formatting.provider": "black",
+  "editor.formatOnSave": true,
+  "python.linting.pylintArgs": [
+    "--disable=all",
+    "--disable=E0402",
+    "--disable=E203",
+    "--dasable=W503"
+  ],
+  "editor.insertSpaces": false,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
