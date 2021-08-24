@@ -13,12 +13,12 @@ def cli(debug, verbose):
 
 
 @cli.command()
-@click.option('--items', nargs=2, type=click.Tuple([int, int]))
+@click.option("--items", nargs=2, type=click.Tuple([int, int]))
 def sum(items):
     a, b = items
     click.echo(f"sum={a + b}")
     return a + b
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cli()

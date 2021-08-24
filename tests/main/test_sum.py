@@ -6,6 +6,6 @@ from src.main import sum
 
 def test_sum():
     runner = CliRunner()
-    result = runner.invoke(sum, ['--items', 2, 3])
+    result = runner.invoke(sum, ["--items", 2, 3])
     assert result.exit_code == 0
     assert str(5) in result.output
