@@ -1,0 +1,30 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "pytest: all",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "python": "${command:python.interpreterPath}",
+      "env": { "PYTHONPATH": "src" },
+      "args": ["tests"]
+    },
+    {
+      "name": "test: sum",
+      "type": "python",
+      "request": "launch",
+      "program": "./src/main.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/venv/bin/activate"
+      },
+      // use "--" before negatives
+      "args": ["sum", "--", "2", "3", "-1"]
+    }
+  ]
+}

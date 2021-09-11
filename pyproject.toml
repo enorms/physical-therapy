@@ -1,0 +1,17 @@
+# use in place of `pyrightconfig.json` 
+
+[tool.pyright]
+include = ["src"]
+exclude = ["**/__pycache__"]
+stubPath = "src/stubs"
+
+reportMissingImports = true
+reportMissingTypeStubs = false
+
+venvPath = "./venv/"
+pythonVersion = "3.8"
+
+executionEnvironments = [
+  { root = "src/tests", extraPaths = ["src/tests/e2e", "src/sdk" ]},
+  { root = "src" }
+]

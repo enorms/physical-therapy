@@ -1,5 +1,7 @@
 # Starter program with click cli examples
 
+from functools import reduce
+
 import click
 
 
@@ -13,11 +15,13 @@ def cli(debug, verbose):
 
 
 @cli.command()
-@click.option("--items", nargs=2, type=click.Tuple([int, int]))
+# @click.option("--items", nargs=2, type=click.Tuple([int, int]))
+@click.argument("items", nargs=-1, type=int)
 def sum(items):
-    a, b = items
-    click.echo(f"sum={a + b}")
-    return a + b
+    # assert items
+    sum = reduce(lambda x, y: x + y, items)
+    click.echo(f"sum={sum}")
+    return sum
 
 
 if __name__ == "__main__":
