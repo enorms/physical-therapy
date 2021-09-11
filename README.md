@@ -3,6 +3,7 @@
 Basic folder structure with working test, starter requirements and gitignore.
 
 ![CodeQL](https://github.com/lifekaizen/template-python/actions/workflows/codeql-analysis.yml/badge.svg)
+![pytest](https://github.com/lifekaizen/template-python/actions/workflows/pytest.yml/badge.svg)
 
 # Usage
 
