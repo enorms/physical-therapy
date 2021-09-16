@@ -1,5 +1,7 @@
-# https://github.com/github/gitignore/commit/14f8a8b4c51ecc00b18905a95c117954e6c77b9d
+# local data
+_data/
 
+# https://github.com/github/gitignore/commit/14f8a8b4c51ecc00b18905a95c117954e6c77b9d
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,9 +1,7 @@
-# Python TDD starter template
+# Questions
 
-Basic folder structure with working test, starter requirements and gitignore.
-
-![CodeQL](https://github.com/lifekaizen/template-python/actions/workflows/codeql-analysis.yml/badge.svg)
-![pytest](https://github.com/lifekaizen/template-python/actions/workflows/pytest.yml/badge.svg)
+- Clamshell, is it mainly the top knee? Do I need to do one each side?
+- Same for Hip Extension, do once for each leg each rep?
 
 # Usage
 

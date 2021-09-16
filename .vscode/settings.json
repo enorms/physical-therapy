@@ -13,10 +13,10 @@
     "--dasable=W503"
   ],
   "editor.insertSpaces": false,
-  "editor.tabSize": 2,
+  // "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": {
-    "editor.defaultFormatter": null
+    "editor.defaultFormatter": null // use Black
   },
   "cSpell.enabled": false
 }
