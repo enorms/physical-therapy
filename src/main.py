@@ -25,7 +25,7 @@ def cli(debug, verbose):
 @cli.command()
 @click.option("--debug", "-d", is_flag=True, help="Use debug mode")
 @click.option("--test", "-d", is_flag=True, help="Test")
-@click.option("--excercise", "-s", is_flag=True, help="Excercises")
+@click.option("--excercise", "-e", is_flag=True, help="Excercises")
 @click.option("--stretch", "-s", is_flag=True, help="Stretches")
 @click.option("--reps", "-r", is_flag=True, help="Track each rep")
 def do_set(excercise, stretch, reps, debug, test):
@@ -81,3 +81,4 @@ if __name__ == "__main__":
     cli()
 
 # TODO: track color band
+# TODO: ask "what should I do today?" and check based on last time, and times per week
