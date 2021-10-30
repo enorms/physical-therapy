@@ -28,7 +28,7 @@ def cli(debug, verbose):
 @click.option("--excercise", "-e", is_flag=True, help="Excercises")
 @click.option("--stretch", "-s", is_flag=True, help="Stretches")
 @click.option("--reps", "-r", is_flag=True, help="Track each rep")
-def do_set(excercise, stretch, reps, debug, test):
+def guided_therapy(excercise, stretch, reps, debug, test):
     """Run a guided CLI program which tracks start and completion of
     each rep, set, and excercise.
 
@@ -56,16 +56,17 @@ def do_set(excercise, stretch, reps, debug, test):
             if click.confirm(
                 " - Start set " + str(set_ + 1) + "?", default=True
             ):  # TODO, just record finish, not start
-                if not reps:
-                    continue
-                for rep in range(0, t.reps):
-                    click.echo(" -- Reps complete: " + str(rep) + " of " + str(t.reps))
-                    if click.confirm(
-                        " -- Start rep " + str(rep + 1) + "?", default=True
-                    ):
-                        click.echo(" -- You can do it!")
-                    if click.confirm(" -- Completed rep?", default=True):
-                        click.echo(" -- You did the rep!")
+                if reps:
+                    for rep in range(0, t.reps):
+                        click.echo(
+                            " -- Reps complete: " + str(rep) + " of " + str(t.reps)
+                        )
+                        if click.confirm(
+                            " -- Start rep " + str(rep + 1) + "?", default=True
+                        ):
+                            click.echo(" -- You can do it!")
+                        if click.confirm(" -- Completed rep?", default=True):
+                            click.echo(" -- You did the rep!")
                 if not reps:
                     click.confirm(" - Completed set?", default=True)
                 click.echo(" - You completed a set! Good job you nailed it")
