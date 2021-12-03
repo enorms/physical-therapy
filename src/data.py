@@ -2,13 +2,14 @@ from typing import List, Optional
 from pydantic import BaseModel, ValidationError
 
 
-class Excercise(BaseModel):
+class Exercise(BaseModel):
     name: str
     description: Optional[str] = None
     times_per_day: int
     times_per_week: int
     sets: int
     reps: int
+    hold: int = -1  # seconds
 
 
 class Stretch(BaseModel):
@@ -17,11 +18,11 @@ class Stretch(BaseModel):
     times_per_day: int
     times_per_week: int
     sets: int
-    reps: int = 1  # fits in Excercise system
+    reps: int = 1  # fits in Exercise system
     hold: int  # seconds
 
 
-excercise_data = [
+exercise_data = [
     {
         "name": "Clamshell with Resistance",
         "times_per_day": 1,
@@ -65,11 +66,19 @@ excercise_data = [
         "sets": 3,
         "reps": 10,
     },
+    {
+        "name": "Plank",
+        "times_per_day": 1,
+        "times_per_week": 3,
+        "sets": 3,
+        "reps": 1,
+        "hold": 30,
+    },
 ]
 
-excercises = []
+exercises = []
 try:
-    excercises = [Excercise(**datum) for datum in excercise_data]
+    exercises = [Exercise(**datum) for datum in exercise_data]
 except ValidationError as e:
     print(e)
 
@@ -133,7 +142,7 @@ except ValidationError as e:
     print(e)
 
 
-test_excercise_data = [
+test_exercise_data = [
     {
         "name": "TEST - Clamshell with Resistance",
         "times_per_day": 1,
@@ -149,4 +158,4 @@ test_excercise_data = [
         "reps": 2,
     },
 ]
-test_excercises = [Excercise(**datum) for datum in test_excercise_data]
+test_exercises = [Exercise(**datum) for datum in test_exercise_data]

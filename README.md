@@ -20,8 +20,7 @@ py ./src/main.py guided-therapy --excercise
 Stretches:
 
 ```sh
-py ./src/main.py guided-therapy --excercise
-stretch
+py ./src/main.py guided-therapy --stretch
 ```
 
 # Install

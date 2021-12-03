@@ -1,12 +1,14 @@
+#!python3
 # Exercise tracker to use with
 # https://kaiserpermanente.medbridgego.com/
 
 from datetime import datetime
 from pathlib import Path
+from os import system
 from typing import Union
 import click
 
-from data import excercises, stretches, test_excercises, Stretch, Excercise
+from data import exercises, stretches, test_exercises, Stretch, Exercise
 
 # https://stackoverflow.com/questions/3961581/in-python-how-to-display-current-time-in-readable-format
 time_format = "%Y-%m-%d %H:%M"
@@ -25,31 +27,31 @@ def cli(debug, verbose):
 @cli.command()
 @click.option("--debug", "-d", is_flag=True, help="Use debug mode")
 @click.option("--test", "-d", is_flag=True, help="Test")
-@click.option("--excercise", "-e", is_flag=True, help="Excercises")
 @click.option("--stretch", "-s", is_flag=True, help="Stretches")
 @click.option("--reps", "-r", is_flag=True, help="Track each rep")
-def guided_therapy(excercise, stretch, reps, debug, test):
-    """Run a guided CLI program which tracks start and completion of
-    each rep, set, and excercise.
+@click.option("--clear", "-c", is_flag=True, help="Clear screen each time")
+def exercise(clear, stretch, reps, debug, test):
+    """Tracks start and completion of exercises.
+    Optionally, do stretching with '-s'."""
 
-    Note: the user input can just be return, doesn't need do be 'Y'"""
+    # call with one line
+    def clear_terminal():
+        if clear:
+            system("clear")
 
-    therapies: Union[list[Excercise], list[Stretch]] = []
-    if excercise:
-        therapies = excercises
-    elif stretch:
+    clear_terminal()  # start clean
+
+    therapies: Union[list[Exercise], list[Stretch]] = []
+    therapies = exercises
+    if stretch:
         therapies = stretches
-    elif test:
-        therapies = test_excercises
-    else:
-        return click.echo("Missing option")
+    if test:
+        therapies = test_exercises
 
     for t in therapies:
-        click.echo("\nExcercise: " + t.name)
-        click.echo(
-            "Sets in excercise: " + str(t.sets) + ", Reps in set: " + str(t.reps)
-        )
-        if stretch:
+        click.echo("\nExercise: " + t.name)
+        click.echo("Sets in exercise: " + str(t.sets) + ", Reps in set: " + str(t.reps))
+        if t.hold != -1:
             click.echo("Hold time: " + str(t.hold) + " sec")
         for set_ in range(0, t.sets):
             click.echo(" - Sets complete: " + str(set_) + " of " + str(t.sets))
@@ -70,11 +72,12 @@ def guided_therapy(excercise, stretch, reps, debug, test):
                 if not reps:
                     click.confirm(" - Completed set?", default=True)
                 click.echo(" - You completed a set! Good job you nailed it")
-        click.echo("You finished an excercise! woot woot keep it up")
+        click.echo("You finished an exercise! woot woot keep it up")
+        clear_terminal()
         to_write = str(t.name) + " " + datetime.now().strftime(time_format) + "\n"
         with output.open("a") as f:  # can delete by hand if needed
             f.write(to_write)
-    click.echo("You finished all excercises!!! You are the greatest")
+    click.echo("You finished all exercises!!! You are the greatest")
     click.echo("Maybe do some stretches or meditate?")
 
 

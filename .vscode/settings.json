@@ -12,8 +12,8 @@
     "--disable=E203",
     "--dasable=W503"
   ],
-  "editor.insertSpaces": false,
-  // "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": {
     "editor.defaultFormatter": null // use Black
