@@ -106,13 +106,6 @@ stretches_data = [
         "hold": 30,
     },
     {
-        "name": "Prone Quadriceps Stretch",
-        "times_per_day": 1,
-        "times_per_week": 7,
-        "sets": 3,
-        "hold": 30,
-    },
-    {
         "name": "Seated Hamstring Stretch",
         "times_per_day": 1,
         "times_per_week": 7,

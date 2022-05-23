@@ -11,16 +11,16 @@
 
 # Usage
 
-Do excercises:
+Do excercises with clean UI:
 
 ```sh
-py ./src/main.py guided-therapy --excercise
+py ./src/main.py run --clear
 ```
 
 Stretches:
 
 ```sh
-py ./src/main.py guided-therapy --stretch
+py ./src/main.py run --stretch --clear
 ```
 
 # Install
@@ -30,3 +30,7 @@ python -m venv venv
 source venv/bin/activate
 python -m pip install -r requirements.txt
 ```
+
+# TODOs
+- [] only prompt on completion; remove kudos on each step
+- [] allow any input to advance (i.e. just return i.e. '')
