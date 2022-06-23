@@ -1,23 +1,15 @@
-# Questions
+Voice guided stretches.
 
-- Clamshell, is it mainly the top knee? Do I need to do one each side?
-- Same for Hip Extension, do once for each leg each rep?
-- same tension for all? harder for things like 'Standing Hip Abduction with Resistance at Ankles and Counter Support'
-- diff Quadriceps Stretch with Chair, Prone Quadriceps Stretch?
-- can signout warning be shortened from 13 minutes?
-- doing ITB right?
-- a little uncertain about 'Gastroc Stretch on Wall' - it's the back calf?
-- how long to wait between sets?
+Created this to help me count and track physical therapy excercises for my knee for skiing. 
+Keyboard interaction is minimal, essentially starting a new type of stretch. Then, voice guides through similar activities so that one can focus on excercises, not counting, and finish quickly.
+
+Originally, there was more keyboard confirmation required and it was just counting so an external timer was also required.
 
 # Usage
 
-Do excercises with clean UI:
+Run program and follow prompts. 
 
-```sh
-py ./src/main.py run --clear
-```
-
-Stretches:
+Do stretches with clean UI:
 
 ```sh
 py ./src/main.py run --stretch --clear
@@ -28,9 +20,18 @@ py ./src/main.py run --stretch --clear
 ```sh
 python -m venv venv
 source venv/bin/activate
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-# TODOs
-- [] only prompt on completion; remove kudos on each step
-- [] allow any input to advance (i.e. just return i.e. '')
+# Requirements
+
+MacOS because using system voice commands.    
+Works on MacOS 12.4 python 3.9.13
+
+## Confirm voice works
+
+Executing the following in a shell program should result in the sentence being spoken.
+
+```sh
+% say -v Susan "is not it nice to have a computer that will talk to you?"
+```
