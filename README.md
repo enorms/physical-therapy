@@ -1,7 +1,11 @@
 Voice guided stretches.
 
-Created this to help me count and track physical therapy excercises for my knee for skiing. 
-Keyboard interaction is minimal, essentially starting a new type of stretch. Then, voice guides through similar activities so that one can focus on excercises, not counting, and finish quickly.
+Launching the program will give something like the following - make sure sound is turned on:
+
+https://user-images.githubusercontent.com/7156025/175213529-2adbe9a2-bf53-4d5a-963d-3f3d33cc4cfb.mov
+
+Created to help me count and track physical therapy stretching for my knee for skiing. 
+Keyboard interaction is minimal, essentially starting a new type of stretch. Then, voice guides through similar activities so that one can focus on stretching, not counting, and finish quickly.
 
 Originally, there was more keyboard confirmation required and it was just counting so an external timer was also required.
 
@@ -12,7 +16,7 @@ Originally, there was more keyboard confirmation required and it was just counti
 For example, Do stretches with clean UI:
 
 ```sh
-py ./src/main.py run --stretch --clear
+py ./src/main.py run --clear
 ```
 
 ## Completed items are saved
@@ -34,11 +38,11 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Setup excercises
+## Setup stretches
 
-Excercises can be added by following the data model in `./src/data.py` and updating the excercise variables.
+Stretches can be added by following the data model in `./src/data.py` and updating the stretches variables.
 
-[ ] TODO: separate excercises variable from data model, move from repo to local
+[ ] TODO: separate stretches variable from data model, move from repo to local
 
 # Requirements
 

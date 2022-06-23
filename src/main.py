@@ -1,20 +1,20 @@
 #!python3
-# Exercise tracker to use with
-# https://kaiserpermanente.medbridgego.com/
 
+import os
 from datetime import datetime
 from pathlib import Path
 from typing import Union
 import click
 
 import utils
-from data import exercises, stretches, test_exercises, Stretch, Exercise
+import data
 
 # https://stackoverflow.com/questions/3961581/in-python-how-to-display-current-time-in-readable-format
 time_format = "%Y-%m-%d %H:%M"
-# will create file; requires dir
-output = Path("./_data/output.txt")
-
+# create dir if not present
+output_dir = Path("./_data")
+os.makedirs(output_dir, exist_ok=True)
+output_file = Path("./_data/output.txt")
 
 # Shared args
 @click.group()
@@ -26,30 +26,23 @@ def cli(debug, verbose):
 
 
 @cli.command()
-@click.option("--debug", "-d", is_flag=True, help="Use debug mode")
-@click.option("--test", "-d", is_flag=True, help="Test")
-@click.option("--stretch", "-s", is_flag=True, help="Stretches")
-@click.option("--reps", "-r", is_flag=True, help="Track each rep")
 @click.option("--clear", "-c", is_flag=True, help="Clear screen each time")
-def run(clear, stretch, reps, debug, test):
-    """Tracks start and completion of exercises.
-    Optionally, do stretching with '-s'."""
+def run(clear):
+    """Main program"""
 
     click.clear()  # start clean
+    therapies: Union[list[data.Stretch], list[data.Stretch]] = [
+        data.Stretch(**datum) for datum in data.stretches_data
+    ]
 
-    therapies: Union[list[Exercise], list[Stretch]] = []
-    therapies = exercises
-    if stretch:
-        therapies = stretches
-    if test:
-        therapies = test_exercises
-
+    # seconds
     almost_done = 5
     delay = 2
+
     for t in therapies:
         click.secho(t.name, bold=True)
         click.secho(
-            message=f"Sets in exercise: {t.sets}\nReps in set: {t.reps}",
+            message=f"Sets in exercise: {t.sets}",
             fg="blue",
             nl=True,
         )
@@ -79,7 +72,8 @@ def run(clear, stretch, reps, debug, test):
         utils.say(f"{t.name} done")
         click.clear()
         to_write = str(t.name) + " " + datetime.now().strftime(time_format) + "\n"
-        with output.open("a") as f:  # can delete by hand if needed
+        # creates file if not present
+        with output_file.open("a") as f:  # can delete by hand if needed
             f.write(to_write)
     utils.countdown_timer(delay)
     utils.say(f"All done")
@@ -89,6 +83,3 @@ def run(clear, stretch, reps, debug, test):
 
 if __name__ == "__main__":
     cli()
-
-# TODO: track color band
-# TODO: ask "what should I do today?" and check based on last time, and times per week
