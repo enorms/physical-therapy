@@ -1,6 +1,10 @@
 Voice guided stretches.
 
-Created this to help me count and track physical therapy stretching for my knee for skiing. 
+Launching the program will give something like the following - make sure sound is turned on:
+
+https://user-images.githubusercontent.com/7156025/175213529-2adbe9a2-bf53-4d5a-963d-3f3d33cc4cfb.mov
+
+Created to help me count and track physical therapy stretching for my knee for skiing. 
 Keyboard interaction is minimal, essentially starting a new type of stretch. Then, voice guides through similar activities so that one can focus on stretching, not counting, and finish quickly.
 
 Originally, there was more keyboard confirmation required and it was just counting so an external timer was also required.
