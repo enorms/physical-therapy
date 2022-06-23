@@ -1,6 +1,6 @@
 #!python3
 
-
+import os
 from datetime import datetime
 from pathlib import Path
 from typing import Union
@@ -11,9 +11,10 @@ import data
 
 # https://stackoverflow.com/questions/3961581/in-python-how-to-display-current-time-in-readable-format
 time_format = "%Y-%m-%d %H:%M"
-# will create file; requires dir
-output = Path("./_data/output.txt")
-
+# create dir if not present
+output_dir = Path("./_data")
+os.makedirs(output_dir, exist_ok=True)
+output_file = Path("./_data/output.txt")
 
 # Shared args
 @click.group()
@@ -71,7 +72,8 @@ def run(clear):
         utils.say(f"{t.name} done")
         click.clear()
         to_write = str(t.name) + " " + datetime.now().strftime(time_format) + "\n"
-        with output.open("a") as f:  # can delete by hand if needed
+        # creates file if not present
+        with output_file.open("a") as f:  # can delete by hand if needed
             f.write(to_write)
     utils.countdown_timer(delay)
     utils.say(f"All done")
