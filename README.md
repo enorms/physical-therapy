@@ -7,21 +7,38 @@ Originally, there was more keyboard confirmation required and it was just counti
 
 # Usage
 
-Run program and follow prompts. 
+## Run program and follow prompts. 
 
-Do stretches with clean UI:
+For example, Do stretches with clean UI:
 
 ```sh
 py ./src/main.py run --stretch --clear
 ```
 
+## Completed items are saved
+
+A timestamped record will be saved locally to `./_data/output.txt` and contain entries like
+
+```
+Standing ITB Stretch 2022-06-20 10:16
+Gastroc Stretch on Wall 2022-06-20 10:21
+```
+
 # Install
+
+## Setup python
 
 ```sh
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
+
+## Setup excercises
+
+Excercises can be added by following the data model in `./src/data.py` and updating the excercise variables.
+
+[ ] TODO: separate excercises variable from data model, move from repo to local
 
 # Requirements
 
