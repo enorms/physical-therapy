@@ -4,7 +4,6 @@
 include = ["src"]
 exclude = ["**/__pycache__"]
 stubPath = "src/stubs"
-# for e in excercises:
 # reportUnboundVariable = false
 # reportOptionalIterable = false
 
