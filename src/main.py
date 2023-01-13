@@ -1,6 +1,7 @@
 #!python3
 
 import os
+import random
 from datetime import datetime
 from pathlib import Path
 from typing import Union
@@ -31,6 +32,7 @@ def run(clear):
     """Main program"""
 
     click.clear()  # start clean
+    random.shuffle(data.stretches_data)
     therapies: Union[list[data.Stretch], list[data.Stretch]] = [
         data.Stretch(**datum) for datum in data.stretches_data
     ]
