@@ -8,7 +8,7 @@ def countdown_timer(seconds=30):
         seconds -= 1
 
 
-def say(message, voice="Susan"):
+def say(message, voice="'Zoe (Premium)'"):
     # https://stackoverflow.com/questions/42150309/how-to-make-a-sound-in-osx-using-python-3
     os.system(f"say -v {voice} {message}")
 
