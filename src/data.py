@@ -8,36 +8,62 @@ class Stretch(BaseModel):
     hold: int  # seconds
 
 
+# * 2 for right, left
 stretches_data = [
     {
-        "name": "Supine Gluteus Stretch",
-        "sets": 3,
+        "name": "Shins",
+        "sets": 2,
         "hold": 30,
+    },
+    {
+        "name": "Supine Gluteus Stretch",
+        "sets": 2,
+        "hold": 40,
     },
     {
         "name": "Quadruped Piriformis Stretch",
-        "sets": 3,
-        "hold": 30,
+        "sets": 2,
+        "hold": 40,
     },
     {
         "name": "Quadriceps Stretch with Chair",
-        "sets": 3,
-        "hold": 30,
-    },
-    {
-        "name": "Seated Hamstring Stretch",
-        "sets": 3,
-        "hold": 30,
+        "sets": 2,
+        "hold": 40,
     },
     {
         "name": "Standing ITB Stretch",
-        "sets": 3,
-        "hold": 30,
+        "sets": 2,
+        "hold": 20,
     },
     {
         "name": "Gastroc Stretch on Wall",
-        "sets": 3,
+        "sets": 2,
+        "hold": 40,
+    },
+    {
+        "name": "Seated Hamstring Stretch",
+        "sets": 2,
+        "hold": 40,
+    },
+    {
+        "name": "Standing Hamstring Stretch",
+        "sets": 1,
+        "hold": 60,
+    },
+    {
+        "name": "Arms over head",
+        "sets": 2,
         "hold": 30,
+    },
+    {
+        "name": "Arms across",
+        "sets": 2,
+        "hold": 30,
+    },
+    {
+        "name": "Chest opening",
+        "sets": 1,
+        "hold": 20,
     },
 ]
 
