@@ -1,15 +1,9 @@
-# https://learn.adafruit.com/improve-your-code-with-pylint/black
-# '#fmt: off', '#fmt: on'
-black
+# dep
 click
-# use for data structures, via Robert
 pydantic
-# https://google.github.io/styleguide/pyguide.html#21-lint
-# https://code.visualstudio.com/docs/python/linting#_specific-linters
+
+# dev dep
+black
 pylint
 pytest
-# https://github.com/google/pytype via https://github.com/google/pytype 
-# Pytype focused on static analysis and type inference; 
-# much more so than any of the other Python type checkers today do
-# https://news.ycombinator.com/item?id=19476605
 pytype

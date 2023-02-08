@@ -4,14 +4,14 @@ Launching the program will give something like the following - make sure sound i
 
 https://user-images.githubusercontent.com/7156025/175213529-2adbe9a2-bf53-4d5a-963d-3f3d33cc4cfb.mov
 
-Created to help me count and track physical therapy stretching for my knee for skiing. 
+Created to help me count and track physical therapy stretching for my knee for skiing.
 Keyboard interaction is minimal, essentially starting a new type of stretch. Then, voice guides through similar activities so that one can focus on stretching, not counting, and finish quickly.
 
 Originally, there was more keyboard confirmation required and it was just counting so an external timer was also required.
 
 # Usage
 
-## Run program and follow prompts. 
+## Run program and follow prompts.
 
 For example, Do stretches with clean UI:
 
@@ -46,7 +46,7 @@ Stretches can be added by following the data model in `./src/data.py` and updati
 
 # Requirements
 
-MacOS because using system voice commands.    
+MacOS because using system voice commands.  
 Works on MacOS 12.4 python 3.9.13
 
 ## Confirm voice works

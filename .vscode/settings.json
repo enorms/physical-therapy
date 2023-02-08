@@ -16,7 +16,7 @@
   "editor.tabSize": 4,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[python]": {
-    "editor.defaultFormatter": null // use Black
+    "editor.defaultFormatter": "ms-python.black-formatter" // use Black
   },
   "cSpell.enabled": false
 }
