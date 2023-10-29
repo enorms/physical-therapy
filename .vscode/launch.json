@@ -5,6 +5,14 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "main",
+      "program": "${workspaceFolder}/src/main.py",
+      "args": ["run"],
+      "type": "python",
+      "request": "launch",
+      "console": "integratedTerminal"
+    },
+    {
       "name": "pytest: all",
       "type": "python",
       "request": "launch",

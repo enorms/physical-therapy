@@ -1,4 +1,4 @@
-#!python3
+#!/usr/bin/env python3
 
 import os
 import random
@@ -12,10 +12,19 @@ import data
 
 # https://stackoverflow.com/questions/3961581/in-python-how-to-display-current-time-in-readable-format
 time_format = "%Y-%m-%d %H:%M"
-# create dir if not present
-output_dir = Path("./_data")
-os.makedirs(output_dir, exist_ok=True)
-output_file = Path("./_data/output.txt")
+
+# fix output file saving relative to where terminal is invoked
+script_path = Path(__file__).resolve()
+project_root = script_path.parent
+while not (project_root / "README.md").exists():
+    project_root = project_root.parent
+# Ensure we didn't reach the filesystem root without finding the project root
+if project_root == project_root.parent:
+    raise ValueError("Could not determine project root")
+output_dir = project_root / "_data"
+output_file = output_dir / "output.txt"
+output_dir.mkdir(parents=True, exist_ok=True)
+
 
 # Shared args
 @click.group()
@@ -72,7 +81,7 @@ def run(clear):
         click.secho(f"You finished {t.name}! woot woot keep it up", fg="green")
         utils.say(f"{t.name} done")
         click.clear()
-        to_write = str(t.name) + " " + datetime.now().strftime(time_format) + "\n"
+        to_write = str(t.name) + ", " + datetime.now().strftime(time_format) + "\n"
         # creates file if not present
         with output_file.open("a") as f:  # can delete by hand if needed
             f.write(to_write)
