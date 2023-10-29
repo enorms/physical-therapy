@@ -1,5 +1,19 @@
+# ./src/utils.py
+
 import os
+import subprocess
 import time
+
+voices = {
+    "ava": "'Ava (Premium)'",  # American
+    "celine": "'Compact Voice 1'",  # Aus Siri
+    "joelle": "'Joelle (Enhanced)'",  # child
+    "karen": "'Karen (Premium)'",  # Australian
+    "matilda": "'Matilda (Premium)'",  # Australian
+    "noelle": "'Noelle (Enhanced)'",  # child
+    "samantha": "'Samantha (Enhanced)'",  # child
+    "zoe": "'Zoe (Premium)'",  # American, cheery
+}
 
 
 def countdown_timer(seconds=30):
@@ -16,9 +30,15 @@ Zoe (Premium)       en_US    # Hello, my name is Zoe. I am an American-English v
 """
 
 
-def say(message, voice="'Zoe (Premium)'"):
-    # https://stackoverflow.com/questions/42150309/how-to-make-a-sound-in-osx-using-python-3
-    os.system(f"say -v {voice} {message}")
+def say(message: str, voice: str = ""):
+    if voice and voice not in voices.keys():
+        raise ValueError
+
+    if voice:
+        subprocess.run(["say", "-v", voices.get(voice), message])
+
+    else:
+        subprocess.run(["say", message])
 
 
 if __name__ == "__main__":
