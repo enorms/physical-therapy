@@ -1,5 +1,12 @@
 Voice guided stretches.
 
+Quickstart:
+
+```sh
+source venv/bin/activate
+src/main.py run --clear
+```
+
 Launching the program will give something like the following - make sure sound is turned on:
 
 https://user-images.githubusercontent.com/7156025/175213529-2adbe9a2-bf53-4d5a-963d-3f3d33cc4cfb.mov

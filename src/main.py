@@ -37,9 +37,8 @@ def run(clear):
         data.Stretch(**datum) for datum in data.stretches_data
     ]
 
-    # seconds
-    almost_done = 5
-    delay = 2
+    almost_done = 5  # seconds
+    delay = 2  # seconds
 
     for t in therapies:
         click.secho(t.name, bold=True)
@@ -54,7 +53,7 @@ def run(clear):
         utils.say(f"Ready for {t.name}?")
         click.pause(info=click.style("Ready? Enter any key to start", fg="yellow"))
         for set_number in range(0 + 1, t.sets + 1):
-            utils.say(f"Get ready for set {set_number}")
+            utils.say(f"Get ready for set {set_number} of {t.sets}")
             click.secho(f"Hold time: {str(t.hold)} sec", fg="yellow", nl=True)
             for side in ["right", "left"]:
                 utils.countdown_timer(delay)
@@ -64,7 +63,7 @@ def run(clear):
                 utils.countdown_timer(t.hold / 2)
                 utils.say(f"Half way")
                 utils.countdown_timer(t.hold / 2 - 2)
-                utils.say(f"Stop")
+                utils.say(f"Ok, stop.")
             utils.say(f"Set {set_number} done")
             click.echo(
                 message="Sets complete: " + str(set_number) + " of " + str(t.sets),
@@ -78,9 +77,15 @@ def run(clear):
         with output_file.open("a") as f:  # can delete by hand if needed
             f.write(to_write)
     utils.countdown_timer(delay)
-    utils.say(f"All done")
-    click.echo("You finished all exercises!!! You are the greatest")
-    click.echo("Maybe do some stretches or meditate?")
+
+    final_msg = "All done."
+    final_encouragement = (
+        "You finished all your exercises!!! You are the greatest. Have a wonderful day!"
+    )
+    utils.say(final_msg)
+    utils.say(final_encouragement)
+    click.echo(final_msg)
+    click.echo(final_encouragement)
 
 
 if __name__ == "__main__":
