@@ -82,8 +82,7 @@ def run(clear):
         utils.say(f"{t.name} done")
         click.clear()
         to_write = str(t.name) + ", " + datetime.now().strftime(time_format) + "\n"
-        # creates file if not present
-        with output_file.open("a") as f:  # can delete by hand if needed
+        with output_file.open("a") as f:
             f.write(to_write)
     utils.countdown_timer(delay)
 

@@ -12,8 +12,8 @@ class Stretch(BaseModel):
 stretches_data = [
     {
         "name": "Shins",
-        "sets": 2,
-        "hold": 30,
+        "sets": 1,
+        "hold": 40,
     },
     {
         "name": "Supine Gluteus Stretch",
@@ -23,7 +23,7 @@ stretches_data = [
     {
         "name": "Quadruped Piriformis Stretch",
         "sets": 2,
-        "hold": 40,
+        "hold": 50,
     },
     {
         "name": "Quadriceps Stretch with Chair",
@@ -38,7 +38,7 @@ stretches_data = [
     {
         "name": "Gastroc Stretch on Wall",
         "sets": 2,
-        "hold": 40,
+        "hold": 30,
     },
     {
         "name": "Seated Hamstring Stretch",
@@ -52,16 +52,21 @@ stretches_data = [
     },
     {
         "name": "Arms over head",
-        "sets": 2,
-        "hold": 30,
+        "sets": 1,
+        "hold": 20,
     },
     {
         "name": "Arms across",
-        "sets": 2,
-        "hold": 30,
+        "sets": 1,
+        "hold": 20,
     },
     {
         "name": "Chest opening",
+        "sets": 1,
+        "hold": 20,
+    },
+    {
+        "name": "Back of neck",
         "sets": 1,
         "hold": 20,
     },
