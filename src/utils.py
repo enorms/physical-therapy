@@ -35,10 +35,18 @@ def say(message: str, voice: str = ""):
         raise ValueError
 
     if voice:
-        subprocess.run(["say", "-v", voices.get(voice), message])
+        try:
+            subprocess.run(["say", "-v", voices.get(voice), message], timeout=10)
+            print("did say: ", message)
+        except subprocess.TimeoutExpired:
+            print("say timeout; message: ", message)
 
     else:
-        subprocess.run(["say", message])
+        try:
+            subprocess.run(["say", message], timeout=10)
+            print("did say: ", message)
+        except subprocess.TimeoutExpired:
+            print("say timeout; message: ", message)
 
 
 if __name__ == "__main__":
